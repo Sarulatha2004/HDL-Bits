@@ -5,7 +5,10 @@ module top_module(
     output [511:0] q ); 
     
     always @(posedge clk)
-    if (load) q <= data;
-    else q <= (q >> 1) ^ (q << 1);
+      begin
+       if (load) 
+           q <= data;
+       else 
+           q <= (q >> 1) ^ (q << 1);
 
 endmodule
