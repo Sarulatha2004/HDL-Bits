@@ -1,6 +1,6 @@
 module top_module (
     input clk,
-    input reset,   // Synchronous reset
+    input reset,  
     input s,
     input w,
     output z
