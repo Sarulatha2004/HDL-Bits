@@ -30,17 +30,17 @@ module top_module(
         begin
             case(state)
                 
-                NONE:next_state <= in ? ONE:NONE;
-                ONE:next_state <= in ? TWO:NONE;
-                TWO:next_state <= in ? THREE:NONE;
-                THREE:next_state <= in ? FOUR:NONE;
-                FOUR:next_state <= in ? FIVE:NONE;
-                FIVE:next_state <= in ? SIX:DISCARD;
-                SIX:next_state <= in ? ERROR:FLAG;
-                DISCARD:next_state <= in ? ONE:NONE;
-                FLAG:next_state <= in ? ONE:NONE;
-                ERROR:next_state <= in ? ERROR:NONE;
-                default:next_state <= NONE;
+                NONE:next_state = in ? ONE:NONE;
+                ONE:next_state = in ? TWO:NONE;
+                TWO:next_state = in ? THREE:NONE;
+                THREE:next_state = in ? FOUR:NONE;
+                FOUR:next_state = in ? FIVE:NONE;
+                FIVE:next_state = in ? SIX:DISCARD;
+                SIX:next_state = in ? ERROR:FLAG;
+                DISCARD:next_state = in ? ONE:NONE;
+                FLAG:next_state = in ? ONE:NONE;
+                ERROR:next_state = in ? ERROR:NONE;
+                default:next_state = NONE;
             endcase
         end
     assign disc = state ==DISCARD;
