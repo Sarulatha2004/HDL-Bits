@@ -22,11 +22,11 @@ module top_module (
     always @(*)
         begin
             case(state)
-            A:next_state <= s ? B:A;
-            B:next_state <= C;
-            C:next_state <= D;
-            D:next_state <=B;
-            default: next_state <= A;
+            A:next_state = s ? B:A;
+            B:next_state = C;
+            C:next_state = D;
+            D:next_state =B;
+            default: next_state = A;
             endcase
         end
     always @(posedge clk)
