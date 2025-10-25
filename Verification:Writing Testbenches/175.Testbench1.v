@@ -8,7 +8,6 @@ module top_module ( output reg A, output reg B );//
         #5;A=0;
         #20;B=0;
         #10;
-        $finish;
 
     end
 
