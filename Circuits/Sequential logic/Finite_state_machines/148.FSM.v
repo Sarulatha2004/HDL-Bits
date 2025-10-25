@@ -23,13 +23,13 @@ module top_module (
     always @(*)
         begin
             case (state)
-                A:next_state <= w ? B:A;
-                B:next_state <= w ? C:D;
-                C:next_state <= w ? E:D;
-                D:next_state <= w ? F:A;
-                E:next_state <= w ? E:D;
-                F:next_state <= w ? C:D;
-                default:next_state <=A;
+                A:next_state = w ? B:A;
+                B:next_state = w ? C:D;
+                C:next_state = w ? E:D;
+                D:next_state = w ? F:A;
+                E:next_state = w ? E:D;
+                F:next_state = w ? C:D;
+                default:next_state =A;
             endcase
         end
     assign z= (state ==E) || (state == F);	
