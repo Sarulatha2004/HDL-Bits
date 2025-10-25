@@ -24,18 +24,18 @@ module top_module (
                 A:
                     begin
                         if(r[1])
-                            next_state <= B;
+                            next_state = B;
                         else if(r[2])
-                            next_state <= C;
+                            next_state = C;
                         else if(r[3])
-                            next_state <= D;
+                            next_state = D;
                         else
-                            next_state <= A;
+                            next_state = A;
                     end
-                B: next_state <= r[1] ? B:A;
-                C: next_state <= r[2] ? C:A;
-                D: next_state <= r[3] ? D:A;
-                default:next_state <=A;
+                B: next_state = r[1] ? B:A;
+                C: next_state = r[2] ? C:A;
+                D: next_state = r[3] ? D:A;
+                default:next_state =A;
             endcase
         end
     assign g[1] = state==B;
