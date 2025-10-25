@@ -24,11 +24,11 @@ module top_module(
     always @(*)
         begin
             case(state)
-                LEFT: next_state <= ground ? (bump_left?RIGHT:LEFT):FALL_LEFT;
-                RIGHT:next_state <= ground ? (bump_right ? LEFT:RIGHT):FALL_RIGHT ;
-                FALL_LEFT: next_state <= ground ? LEFT:FALL_LEFT;
-                FALL_RIGHT:next_state <= ground ? RIGHT :FALL_RIGHT;
-                default: next_state <= LEFT;
+                LEFT: next_state = ground ? (bump_left?RIGHT:LEFT):FALL_LEFT;
+                RIGHT:next_state = ground ? (bump_right ? LEFT:RIGHT):FALL_RIGHT ;
+                FALL_LEFT: next_state = ground ? LEFT:FALL_LEFT;
+                FALL_RIGHT:next_state = ground ? RIGHT :FALL_RIGHT;
+                default: next_state = LEFT;
                 
             endcase
         end
