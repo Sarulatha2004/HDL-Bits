@@ -18,14 +18,14 @@ module top_module (
         begin
             case(state)
                 A:begin
-                    next_state <= x ? B:A;
+                    next_state = x ? B:A;
                     z=x;
                 end
                 B:begin
-                    next_state <=B;
+                    next_state =B;
                     z=~x;
                 end
-                default:next_state <=A;
+                default:next_state =A;
             endcase
         end
 
