@@ -9,9 +9,9 @@ module top_module(
 
     always @(*) begin    
         case(state)
-            A:next_state<= in ? A:B;
-            B:next_state <= in ? B:A;
-            default:next_state <=B;
+            A:next_state= in ? A:B;
+            B:next_state = in ? B:A;
+            default:next_state =B;
         endcase
        
        
