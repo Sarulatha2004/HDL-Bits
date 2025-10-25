@@ -13,8 +13,10 @@ module top_module (
                 5:q=16'h64ce;
                 6:q=16'hc526;
                 7:q=16'h2f19;
+                default : q=16'h0000;
             endcase
         end
     
 
 endmodule
+
