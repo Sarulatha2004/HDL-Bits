@@ -28,16 +28,16 @@ module top_module (
     always @(*)
         begin
             case(state)
-                A:next_state <= B;
-                B:next_state <= C;
-                C:next_state <= x? S0: C;
-                S0:next_state <= x?S0:S1;
-                S1: next_state <=x?S2:C;
-                S2:next_state <=y?	G1:Y0;
-                Y0:next_state <=y? G1:G0;
-                G0:next_state <= G0;
-                G1:next_state <=G1;
-                default : next_state <=A;
+                A:next_state = B;
+                B:next_state = C;
+                C:next_state = x? S0: C;
+                S0:next_state = x?S0:S1;
+                S1: next_state =x?S2:C;
+                S2:next_state =y?	G1:Y0;
+                Y0:next_state =y? G1:G0;
+                G0:next_state = G0;
+                G1:next_state =G1;
+                default : next_state =A;
             endcase
         end
     assign f=state == B;
