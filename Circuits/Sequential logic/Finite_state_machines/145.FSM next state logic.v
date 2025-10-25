@@ -14,13 +14,13 @@ module top_module (
     always @ (*)
         begin
             case(y)
-                A:Y <= w?A:B;
-                B: Y <= w?D:C;
-                C: Y <= w?D:E;
-                D:Y <=  w?A:F;
-                E: Y <= w?D:E;
-                F: Y <= w?D:C;
-                default:Y <=A;
+                A:Y = w?A:B;
+                B: Y = w?D:C;
+                C: Y = w?D:E;
+                D:Y =  w?A:F;
+                E: Y = w?D:E;
+                F: Y = w?D:C;
+                default:Y =A;
             endcase
         end
     assign Y2= Y[1];
