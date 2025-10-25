@@ -9,11 +9,11 @@ module top_module(
     always @(*)
         begin
             case(state)
-                A: next_state <= in ?B:A;
-                B: next_state <= in ?B:C;
-                C: next_state <= in ?D:A;
-                D:next_state  <= in ?B:C;
-                default:  next_state <=A;
+                A: next_state = in ?B:A;
+                B: next_state = in ?B:C;
+                C: next_state = in ?D:A;
+                D:next_state  = in ?B:C;
+                default:  next_state =A;
             endcase
         end
                 assign out = state==D;
